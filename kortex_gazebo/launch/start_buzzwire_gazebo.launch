@@ -1,0 +1,24 @@
+    <launch>
+
+        <!-- Gazebo parameters -->
+        <arg name="use_sim_time" default="true"/>
+        <arg name="debug" default="false" />
+        <arg name="gui" default="true" />
+        <arg name="paused" default="true" />
+    
+        <!-- Launch Gazebo with an empty world -->
+        <include file="$(find gazebo_ros)/launch/empty_world.launch">
+            <arg name="world_name" value="$(find kortex_gazebo)/launch/shared_control_sim.world"/>
+            <!-- <arg name="world_name" value="$(find kortex_gazebo)/launch/tester.world"/> -->
+            <!-- <arg name="world_name" value="/worlds/empty.world"/> -->
+            <arg name="gui" value="$(arg gui)" />
+            <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+            <arg name="debug" value="$(arg debug)" />
+            <arg name="paused" value="$(arg paused)"/>
+            <arg name="verbose" value="true"/>
+        </include>
+
+        <param name="wire" textfile="$(find buzz_wire_description)/wire/urdf/wire.urdf" />
+        <node name="spawn_buzzwire" pkg="gazebo_ros" type="spawn_model" args="-param wire -urdf -x 0.5 -y -0.25 -z 1 -R 1.5707 -Y 1.5707 -model wire" />
+
+    </launch>

@@ -26,6 +26,7 @@
   <run_depend>std_srvs</run_depend>
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>
+    <gazebo-ros gazebo_model_path="${prefix}"/>
     <architecture_independent />
   </export>
 </package>
