@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="gen3_robotiq_2f_85" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="gen3_loop_handle" xmlns:xacro="http://ros.org/wiki/xacro">
     
     <!-- Arguments -->
     <xacro:arg name="arm" default="gen3" />

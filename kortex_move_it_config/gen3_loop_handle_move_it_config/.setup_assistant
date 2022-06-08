@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: kortex_description
+    relative_path: robots/gen3_loop_handle.xacro
+    xacro_args: arm:=gen3 gripper:=loop_handle
+  SRDF:
+    relative_path: config/7dof/gen3_loop_handle.srdf.xacro
+  CONFIG:
+    author_name: Rui Luo
+    author_email: luo.rui@northeastern.edu
+    generated_timestamp: 1654713058
