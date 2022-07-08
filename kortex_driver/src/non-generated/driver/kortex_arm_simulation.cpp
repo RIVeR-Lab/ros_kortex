@@ -1664,6 +1664,9 @@ void KortexArmSimulation::new_joint_speeds_cb(const kortex_driver::Base_JointSpe
 void KortexArmSimulation::new_twist_cb(const kortex_driver::TwistCommand& twist)
 {
     // TODO Implement
+    kortex_driver::SendTwistCommandRequest req;
+    req.input = twist;
+    SendTwistCommand(req);
 }
 
 void KortexArmSimulation::clear_faults_cb(const std_msgs::Empty& empty)

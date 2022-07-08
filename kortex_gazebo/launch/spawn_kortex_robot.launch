@@ -164,6 +164,9 @@
 
         <!-- Start RViz -->
         <node name="rviz" pkg="rviz" type="rviz" if="$(arg start_rviz)"/> 
+
+        <!-- Start joint trajectory controller gui-->
+        <!-- <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/> -->
     
     </group>
 
