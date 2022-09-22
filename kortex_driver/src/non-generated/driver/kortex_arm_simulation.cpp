@@ -467,8 +467,8 @@ kortex_driver::SendTwistCommand::Response KortexArmSimulation::SendTwistCommand(
 
     // Convert orientations to rad
     m_twist_command.angular_x = m_math_util.toRad(m_twist_command.angular_x);
-    m_twist_command.angular_x = m_math_util.toRad(m_twist_command.angular_y);
-    m_twist_command.angular_x = m_math_util.toRad(m_twist_command.angular_z);
+    m_twist_command.angular_y = m_math_util.toRad(m_twist_command.angular_y);
+    m_twist_command.angular_z = m_math_util.toRad(m_twist_command.angular_z);
     
     // Fill the twist command
     m_twist_command = twist_command.twist;
@@ -1470,6 +1470,8 @@ kortex_driver::KortexError KortexArmSimulation::ExecuteSendTwist(const kortex_dr
             twist_command.angular_z = previous_twist_command.angular_z + std::copysign(max_angular_twist_delta, delta_twist.angular_z);
         }
 
+        // std::cout << m_twist_command.angular_x << std::endl;
+
         // Cap to the velocity limit
         twist_command.linear_x = std::copysign(std::min(fabs(twist_command.linear_x), fabs(m_max_cartesian_twist_linear)), twist_command.linear_x);
         twist_command.linear_y = std::copysign(std::min(fabs(twist_command.linear_y), fabs(m_max_cartesian_twist_linear)), twist_command.linear_y);
@@ -1486,10 +1488,13 @@ kortex_driver::KortexError KortexArmSimulation::ExecuteSendTwist(const kortex_dr
             commands_eigen[i] = commands[i];
         }
         commands_kdl.data = commands_eigen;
+
+        // Changed the twist command angular command ordering from XYZ to ZXY. This makes it match up with our real robot setup.
+        // Not sure why this needs to be changed, but it works now.
         
         // Fill KDL Twist structure with Kortex twist
         KDL::Twist twist_kdl = KDL::Twist(KDL::Vector(twist_command.linear_x, twist_command.linear_y, twist_command.linear_z),
-                                            KDL::Vector(twist_command.angular_x, twist_command.angular_y, twist_command.angular_z));
+                                            KDL::Vector(twist_command.angular_z, twist_command.angular_x, twist_command.angular_y));
         
         // Call IK and fill joint velocity commands
         KDL::JntArray joint_velocities(GetDOF());
