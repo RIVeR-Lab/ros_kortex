@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/rui/kinova_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/rui/kinova_ws/src/Azure_Kinect_ROS_Driver/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+        "/home/rui/kinova_ws/src/ros_kortex/third_party/gazebo-pkgs/gazebo_grasp_plugin/include/**",
+        "/home/rui/kinova_ws/src/ros_kortex/third_party/gazebo-pkgs/gazebo_version_helpers/include/**",
+        "/home/rui/kinova_ws/src/jaco3_shared_control/jaco3_camera_proc/include/**",
+        "/home/rui/kinova_ws/src/jaco3_shared_control/jaco3_control/include/**",
+        "/home/rui/kinova_ws/src/jaco3_shared_control/jaco3_teleop/include/**",
+        "/home/rui/kinova_ws/src/ros_kortex/kortex_driver/include/**",
+        "/home/rui/kinova_ws/src/kortex_playground/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+        "/home/rui/kinova_ws/src/moveit_resources/prbt_ikfast_manipulator_plugin/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_ros/benchmarks/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_ros/move_group/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_ros/robot_interaction/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_ros/moveit_servo/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_setup_assistant/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_planners/pilz_industrial_motion_planner/include/**",
+        "/home/rui/kinova_ws/src/moveit/moveit_planners/pilz_industrial_motion_planner_testutils/include/**",
+        "/home/rui/kinova_ws/src/robot_body_filter/include/**",
+        "/home/rui/kinova_ws/src/ros_kortex/third_party/roboticsgroup_upatras_gazebo_plugins/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

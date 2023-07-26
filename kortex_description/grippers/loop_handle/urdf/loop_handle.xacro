@@ -6,12 +6,12 @@
     <joint name="${prefix}gripper_base_joint" type="fixed">
         <parent link="${parent}"/>
         <child link="${prefix}long_handle_base_link"/>
-        <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.028"/>
+        <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.0"/>
     </joint>
 
     <link name="${prefix}long_handle_base_link">
       <inertial>
-        <origin xyz="8.625E-08 -4.6583E-06 0.03145" rpy="0 0 0" />
+        <origin xyz="8.625E-08 -4.6583E-06 0" rpy="0 0 0" />
         <mass value="0.22652" />
         <inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478" />
       </inertial>
@@ -20,7 +20,8 @@
         <geometry>
           <!-- The DAE file doesn't show well in Gazebo so we're using the STL instead -->
           <!-- <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001"/> -->
-          <mesh scale="0.001 0.001 0.001" filename="package://kortex_description/grippers/loop_handle/meshes/visual/long_loop_handle.stl" />
+          <!-- <mesh scale="0.001 0.001 0.001" filename="package://kortex_description/grippers/loop_handle/meshes/visual/long_loop_handle.stl" /> -->
+          <mesh filename="package://kortex_description/grippers/loop_handle/meshes/visual/short_loop_handle.obj"/>
         </geometry>
         <material name="">
           <color rgba="0.1 0.1 0.1 1" />
@@ -29,7 +30,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-           <mesh scale="0.001 0.001 0.001" filename="package://kortex_description/grippers/loop_handle/meshes/collision/long_loop_handle.stl" />
+          <mesh filename="package://kortex_description/grippers/loop_handle/meshes/visual/short_loop_handle.obj"/>
+          <!-- <mesh scale="0.001 0.001 0.001" filename="package://kortex_description/grippers/loop_handle/meshes/collision/long_loop_handle.stl" /> -->
         </geometry>
       </collision>
     </link>
